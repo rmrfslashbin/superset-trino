@@ -12,6 +12,7 @@ export
 # See superset URL above for post-installation steps
 
 build:
+# Remark out the following line if you don't want to include AWS Glue support
 	rm -f trino-server/etc/trino/catalog.hive.properties
 	sed \
 	  -e "s/TRINO_GLUE_REGION/$(trino_glue_region)/" \
@@ -27,3 +28,7 @@ build:
 	  -e "s/TRINO_TAG/$(trinoTag)/" \
 	  -e "s/SUPERSET_TAG/$(supersetTag)/" \
 	  templates/docker-compose.TEMPLATE.yml > docker-compose.yml
+
+up:
+	docker-compose up -d
+	docker ps |grep superset
