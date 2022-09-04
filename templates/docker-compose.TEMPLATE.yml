@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  trino:
+    image: ORG/trino:TRINO_TAG
+    ports:
+      - "8080:8080"
+  superset:
+    image: ORG/superset:SUPERSET_TAG
+    links:
+      - "trino:trino"
+    depends_on:
+      - trino
+    ports:
+      - "8088:8088"
