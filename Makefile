@@ -32,3 +32,13 @@ build:
 up:
 	docker-compose up -d
 	docker ps |grep superset
+
+crawler: crawler-run crawler-status
+
+crawler-run:
+	# Run the crawler
+	aws --no-cli-pager glue start-crawler --name $(aws_glue_crawler)
+
+crawler-status:
+	# Status the crawler
+	aws --no-cli-pager glue get-crawler --name $(aws_glue_crawler)

@@ -19,3 +19,9 @@ This repo is meant to be a starting point for a local development environment, t
 6. Log into Superset and set up a Trino database connection (e.g. `trino://user@trino:8080/hive`).
 7. Add a custom column to the rtl table to fix up the timestamp. SQL: `FROM_UNIXTIME(CAST (timestamp AS DOUBLE))`.
 7. Have fun!
+
+## Glue Update
+If the AWS glue tables need to be updates manually, be sure to run a crawler on the database and then update the table metadata in the Glue Data Catalog.
+- Status run & status the crawler: `make crawler`
+- Run the crawler: `make crawler-run`
+- Status the crawler: `make crawler-status`
