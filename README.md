@@ -17,4 +17,5 @@ This repo is meant to be a starting point for a local development environment, t
 4. Edit and then run `setup.bash` to configure Superset.
 5. Browser to `http://${HOST}:8088` to access Superset (${HOOST} is the hostname of the server exposing the Superset web server).
 6. Log into Superset and set up a Trino database connection (e.g. `trino://user@trino:8080/hive`).
+7. Add a custom column to the rtl table to fix up the timestamp. SQL: `FROM_UNIXTIME(CAST (timestamp AS DOUBLE))`.
 7. Have fun!
