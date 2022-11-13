@@ -25,3 +25,6 @@ If the AWS glue tables need to be updates manually, be sure to run a crawler on 
 - Status run & status the crawler: `make crawler`
 - Run the crawler: `make crawler-run`
 - Status the crawler: `make crawler-status`
+
+## Helpful Trino Queries
+This gist has some helpful queries for Trino: https://gist.github.com/rmrfslashbin/b13a37be9aba9266943d42050ef6c74d.
