@@ -41,4 +41,4 @@ crawler-run:
 
 crawler-status:
 	# Status the crawler
-	aws --no-cli-pager glue get-crawler --name $(aws_glue_crawler)
+	aws --no-cli-pager glue get-crawler --name $(aws_glue_crawler) | jq .Crawler.State
