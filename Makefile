@@ -30,7 +30,7 @@ build:
 	  templates/docker-compose.TEMPLATE.yml > docker-compose.yml
 
 up:
-	docker-compose up -d
+	docker compose up -d
 	docker ps |grep superset
 
 crawler: crawler-run crawler-status
