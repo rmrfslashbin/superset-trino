@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  trino:
+    image: rmrf/trino:latest
+    ports:
+      - "8080:8080"
+  superset:
+    image: rmrf/superset:latest
+    links:
+      - "trino:trino"
+    depends_on:
+      - trino
+    ports:
+      - "8088:8088"
+    environment:
+      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY}
